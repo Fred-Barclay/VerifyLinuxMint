@@ -1,2 +1,4 @@
 # VerifyLinuxMint
-Instructions how to verify Linux Mint iso images
+Instructions for verifying Linux Mint ISOs. 
+
+Webpage code is on the gh-pages branch.
