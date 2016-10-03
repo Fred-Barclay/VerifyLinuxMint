@@ -135,8 +135,7 @@ Ctrl+S and you will be able to download each file.</p>
 OS X (Mac), or Linux.</p>
 
 <h3>Windows</h3>
-<p>The Linux Mint team recommends the <a href="http://www.labtestproject.com/files/win/sha256sum/sha256sum.exe">
-LabTestProject sha256sum.exe</a> tool. After downloading and installing,
+<p><i>Currently in progress...</i>
 
 <h3>Linux</h3>
 <p>Most Linux distros already have an sha256sum generator and a GPG client installed.
@@ -153,7 +152,7 @@ iso file. This step may take a few minutes.</p>
 <p>After you get the sha256sum, compare it to the corresponding one in the
 <i>sha256sum.txt</i> file. For example, if I had downloaded linuxmint-17.3-xfce-32bit.iso,
 sha256sum.txt tells me that the correct sha256sum is
-<samp>cebff34e99b071d7237d2cfd2e24719f5a72e9e499a82d424007e850befc755b</samp>. If
+<pre>cebff34e99b071d7237d2cfd2e24719f5a72e9e499a82d424007e850befc755b</pre> If
 this is identical to the output of <kbd>sha256sum linuxmint-17.3-xfce-32bit.iso</kbd>,
 then the download proceeded correctly and we can proceed to the next step.</p>
 
@@ -164,8 +163,7 @@ damaged Linux Mint iso. Delete it and try again.</p>
 to make sure it is from the Mint developers and not a malicious third party. Since
 the Mint developers have provided a detached GPG signature, <i>sha256sum.txt.gpg</i>,
 we will import their signing key and use it to verify the <i>sha256sum.txt</i> file
-and, by extension, the Mint iso image. Let's import the public key and check
-<i>sha256sum.txt</i></p>
+and, by extension, the Mint iso image.</i></p>
 
 <p>But wait! There are actually two different keys used to sign Linux Mint <i>sha256sum.txt</i>
 files, depending on the version. Specifically, Mint 18 uses a newer key, while
@@ -176,20 +174,29 @@ or Xfce; or 32 or 64 bit), use the following command to import the public key:
 </br></br>
 <br>If you have downloaded one of the Mint 17.x series, or LMDE 2, use the following
 command in your terminal to import the public key:
-<br><kbd>gpg --keysever keyserver.ubuntu.com --recv-key "E1A3 8B8F 1446 75D0 60EA 666F 3EE6 7F3D 0FF4 05B2"</kbd>
+<br><kbd>gpg --keyserver keyserver.ubuntu.com --recv-key "E1A3 8B8F 1446 75D0 60EA 666F 3EE6 7F3D 0FF4 05B2"</kbd>
 </br></br>
 
 <p>Now let's verify! Enter the following command into your alread-opened terminal:
 <br><kbd>gpg --verify sha256sum.txt.gpg sha256sum.txt</br></kbd></p>
 
-<p>If everything is good, you should see something like this (for Mint 17.x/LMDE 2):
-<br><kbd>$ gpg --verify sha256sum.txt.gpg sha256sum.txt
-gpg: Signature made Wed 08 Apr 2015 00:19:15 AEST using DSA key ID 0FF405B2
-gpg: Good signature from "Clement Lefebvre (Linux Mint Package Repository v1) <root@linuxmint.com>"
+<p>If everything is good, you should see something like this (for Mint 18)
+<br><pre>$ gpg --verify sha256sum.txt.gpg sha256sum.txt
+gpg: Signature made Wed 07 Sep 2016 22:56:33 AEST using RSA key ID A25BAE09
+gpg: Good signature from "Linux Mint ISO Signing Key <root@linuxmint.com>"
 gpg: WARNING: This key is not certified with a trusted signature!
 gpg:          There is no indication that the signature belongs to the owner.
-Primary key fingerprint: E1A3 8B8F 1446 75D0 60EA  666F 3EE6 7F3D 0FF4 05B2</kbd></br>
+Primary key fingerprint: 27DE B156 44C6 B3CF 3BD7  D291 300F 846B A25B AE09</pre><br>
+
+or this (for Mint 17.x/LMDE 2):
+<br><pre>$ gpg --verify sha256sum.txt.gpg sha256sum.txt
+gpg: Signature made Wed 08 Apr 2015 00:19:15 AEST using DSA key ID 0FF405B2
+gpg: Good signature from "Clement Lefebvre (Linux Mint Package Repository v1) &ltroot@linuxmint.com&gt"
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: E1A3 8B8F 1446 75D0 60EA  666F 3EE6 7F3D 0FF4 05B2</pre></br>
 </p>
+
 
 
 
