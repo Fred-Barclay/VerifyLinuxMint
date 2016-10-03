@@ -180,7 +180,7 @@ command in your terminal to import the public key:
 <p>Now let's verify! Enter the following command into your alread-opened terminal:
 <br><kbd>gpg --verify sha256sum.txt.gpg sha256sum.txt</br></kbd></p>
 
-<p>If everything is good, you should see something like this (for Mint 18)
+<p>Hopefully, you'll see something like this (for Mint 18):
 <br><pre>$ gpg --verify sha256sum.txt.gpg sha256sum.txt
 gpg: Signature made Wed 07 Sep 2016 22:56:33 AEST using RSA key ID A25BAE09
 gpg: Good signature from "Linux Mint ISO Signing Key <root@linuxmint.com>"
@@ -197,7 +197,23 @@ gpg:          There is no indication that the signature belongs to the owner.
 Primary key fingerprint: E1A3 8B8F 1446 75D0 60EA  666F 3EE6 7F3D 0FF4 05B2</pre></br>
 </p>
 
+<p>If you see this, then congratulations! You have successfully verified Linux
+Mint! That wasn't too hard, was it? :-)</p>
 
+<p>Don't worry about the "WARNING: This key is not certified with a trusted
+signature!" This only means that you have not signed the Mint key with your own
+key (which you probably don't even have); it's not a message about the safety of
+the Mint iso itself.</p>
+
+<p>On the other hand, if something is wrong, you'll see something like this:
+<pre>$ gpg --verify sha256sum.txt.gpg sha256sum.txt
+gpg: Signature made Wed 06 Jan 2016 10:06:20 AM CST using DSA key ID 0FF405B2
+gpg: BAD signature from "Clement Lefebvre (Linux Mint Package Repository v1) <root@linuxmint.com>"
+</pre>
+See the line that says "BAD signature"? That's what we don't want. Delete
+<i>sha256sum.txt</i> and <i>sha256sum.txt.gpg</i> and try again. If it fails a
+second time, delete both Mint iso image and the two sha256sum file, choose a
+different mirror, and work through this again.</p>
 
 
         </section>
