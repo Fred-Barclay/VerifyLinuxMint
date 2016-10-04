@@ -32,8 +32,8 @@
 <a id="Welcome!" class="anchor" href="#welcome" aria-hidden="true"><span aria-hidden="true"
 	class="octicon octicon-link"></span></a>Welcome!</h2>
 
-<p>This guide is meant to be an easy to follow guide for verifying Linux Mint
-17, 17.1, 17.2, 17.3, 18, and LMDE 2.</p>
+<p>This guide is meant to be an easy to follow tutorial for verifying  the iso
+images of Linux Mint 17, 17.1, 17.2, 17.3, 18, and LMDE 2.</p>
 
 <h2>
 <a id="ftf" class="anchor" href="#ftf" aria-hidden="true"><span aria-hidden="true"
@@ -208,12 +208,12 @@ the Mint iso itself.</p>
 <p>On the other hand, if something is wrong, you'll see something like this:
 <pre>$ gpg --verify sha256sum.txt.gpg sha256sum.txt
 gpg: Signature made Wed 06 Jan 2016 10:06:20 AM CST using DSA key ID 0FF405B2
-gpg: BAD signature from "Clement Lefebvre (Linux Mint Package Repository v1) <root@linuxmint.com>"
+gpg: BAD signature from "Clement Lefebvre (Linux Mint Package Repository v1) &ltroot@linuxmint.com&gt"
 </pre>
-See the line that says "BAD signature"? That's what we don't want. Delete
-<i>sha256sum.txt</i> and <i>sha256sum.txt.gpg</i> and try again. If it fails a
-second time, delete both Mint iso image and the two sha256sum file, choose a
-different mirror, and work through this again.</p>
+See the line that says "BAD signature"? That's what we don't want. Delete and
+re-download <i>sha256sum.txt</i> and <i>sha256sum.txt.gpg</i> and try again. If
+it fails a second time, delete both Mint iso image and the two sha256sum files,
+choose a different mirror, and work through this again.</p>
 
 
         </section>
