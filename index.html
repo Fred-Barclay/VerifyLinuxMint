@@ -145,7 +145,8 @@ If yours doesn't, check online for instructions on how to install these.</p>
 and sha256 files. For example, if you saved them to your Downloads folder, then:
 <br><kbd>cd ~/Downloads</kbd></br></p>
 
-<p>Next, calculate the sha256sum of the Mint iso. <br><kbd>sha256sum &ltmint-iso-file&gt</kbd></br>
+<p>Next, calculate the sha256sum of the Mint iso.
+	<br><font color="3333CC"><kbd>sha256sum &ltmint-iso-file&gt</kbd></font></br>
 Naturally, you should replace &ltmint-iso-file&gt with the correct name of the
 iso file. This step may take a few minutes.</p>
 
@@ -170,15 +171,15 @@ files, depending on the version. Specifically, Mint 18 uses a newer key, while
 Mint 17.x and LMDE 2 use an older (but still good) key.
 <br>If you have downloaded Mint 18 (it doesn't matter if it's Cinnamon, KDE, MATE,
 or Xfce; or 32 or 64 bit), use the following command to import the public key:
-<br><kbd>gpg --keyserver keyserver.ubuntu.com --recv-key "27DE B156 44C6 B3CF 3BD7 D291 300F 846B A25B AE09"</kbd>
-</br></br>
+<br><font color="3333CC"><kbd>gpg --keyserver keyserver.ubuntu.com --recv-key "27DE B156 44C6 B3CF 3BD7 D291 300F 846B A25B AE09"</kbd>
+</font></br></br>
 <br>If you have downloaded one of the Mint 17.x series, or LMDE 2, use the following
 command in your terminal to import the public key:
-<br><kbd>gpg --keyserver keyserver.ubuntu.com --recv-key "E1A3 8B8F 1446 75D0 60EA 666F 3EE6 7F3D 0FF4 05B2"</kbd>
-</br></br>
+<br><font color="3333CC"><kbd>gpg --keyserver keyserver.ubuntu.com --recv-key "E1A3 8B8F 1446 75D0 60EA 666F 3EE6 7F3D 0FF4 05B2"</kbd>
+</font></br></br>
 
 <p>Now let's verify! Enter the following command into your already-opened terminal:
-<br><kbd>gpg --verify sha256sum.txt.gpg sha256sum.txt</br></kbd></p>
+<br><font color="3333CC"><kbd>gpg --verify sha256sum.txt.gpg sha256sum.txt</kbd></font></br></p>
 
 <p>Hopefully, you'll see something like this (for Mint 18):
 <br><pre>$ gpg --verify sha256sum.txt.gpg sha256sum.txt
