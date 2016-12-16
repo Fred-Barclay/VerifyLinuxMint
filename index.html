@@ -33,7 +33,7 @@
 	class="octicon octicon-link"></span></a>Welcome!</h2>
 
 <p>This guide is meant to be an easy to follow tutorial for verifying  the iso
-images of Linux Mint 17, 17.1, 17.2, 17.3, 18, and LMDE 2.</p>
+images of Linux Mint 17, 17.1, 17.2, 17.3, 18, 18.1, and LMDE 2.</p>
 
 <h2>
 <a id="ftf" class="anchor" href="#ftf" aria-hidden="true"><span aria-hidden="true"
@@ -115,7 +115,7 @@ American flag, and then perhaps choose <a href="http://mirrors.advancedhosters.c
 advancedhosters.com</a> or <a href="http://mirrors.seas.harvard.edu/linuxmint/">Havard
 School of Engineering</a>.</p>
 <p>A web page should open with (usually) three folders on it: "debian/", "stable/",
-and "testing/". If you are downloading Mint 17.x or Mint 18, then choose "stable/"
+and "testing/". If you are downloading Mint 17.x or Mint 18.x, then choose "stable/"
 and then select the folder with the version you want; if LMDE 2 then choose
 "debian/". Next, download the iso image, sha256sum.txt, and sha256sum.txt.gpg,
 all into the same folder (aka directory). For most users, this will automatically
@@ -135,7 +135,8 @@ Ctrl+S and you will be able to download each file.</p>
 OS X (Mac), or Linux.</p>
 
 <h3>Windows</h3>
-<p><i>Currently in progress...</i>
+<p><i>Currently in progress... See <a href=https://forums.linuxmint.com/viewtopic.php?f=42&t=229292>
+here</a> in the meantime.</i>
 
 <h3>Linux</h3>
 <p>Most Linux distros already have an sha256sum generator and a GPG client installed.
@@ -167,9 +168,9 @@ we will import their signing key and use it to verify the <i>sha256sum.txt</i> f
 and, by extension, the Mint iso image.</i></p>
 
 <p>But wait! There are actually two different keys used to sign Linux Mint <i>sha256sum.txt</i>
-files, depending on the version. Specifically, Mint 18 uses a newer key, while
+files, depending on the version. Specifically, Mint 18.x uses a newer key, while
 Mint 17.x and LMDE 2 use an older (but still good) key.
-<br>If you have downloaded Mint 18 (it doesn't matter if it's Cinnamon, KDE, MATE,
+<br>If you have downloaded Mint 18.x (it doesn't matter if it's Cinnamon, KDE, MATE,
 or Xfce; or 32 or 64 bit), use the following command to import the public key:
 <br><font color="3333CC"><kbd>gpg --keyserver keyserver.ubuntu.com --recv-key "27DE B156 44C6 B3CF 3BD7 D291 300F 846B A25B AE09"</kbd>
 </font></br></br>
@@ -181,7 +182,7 @@ command in your terminal to import the public key:
 <p>Now let's verify! Enter the following command into your already-opened terminal:
 <br><font color="3333CC"><kbd>gpg --verify sha256sum.txt.gpg sha256sum.txt</kbd></font></br></p>
 
-<p>Hopefully, you'll see something like this (for Mint 18):
+<p>Hopefully, you'll see something like this (for Mint 18.x):
 <br><pre>$ gpg --verify sha256sum.txt.gpg sha256sum.txt
 gpg: Signature made Wed 07 Sep 2016 22:56:33 AEST using RSA key ID A25BAE09
 gpg: Good signature from "Linux Mint ISO Signing Key <root@linuxmint.com>"
